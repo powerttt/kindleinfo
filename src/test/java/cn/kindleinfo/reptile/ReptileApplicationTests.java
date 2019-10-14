@@ -10,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.IdentityHashMap;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -33,5 +35,23 @@ public class ReptileApplicationTests {
         bookInfo.setScore(1d);
         bookInfo.setPhotoUrl("1");
         bookInfoDao.insertSelective(bookInfo);
+    }
+
+    public void test(){
+        Map<Integer,String> map = new IdentityHashMap<>();
+        map.put(1, "Hello");
+        map.putIfAbsent(1, "World");
+        print(map.get(1));
+        print(map.size());
+
+        map.put(1024, "A");
+        map.putIfAbsent(1024, "B");
+        print(map.get(1024));
+        print(map.size());
+
+    }
+
+    private static void print(Object object) {
+        System.out.print(object + " ");
     }
 }

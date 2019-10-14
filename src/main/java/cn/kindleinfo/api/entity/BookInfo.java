@@ -6,7 +6,6 @@ import tk.mybatis.mapper.annotation.KeySql;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * 书籍信息
@@ -17,7 +16,6 @@ import java.util.Date;
  * >
  */
 @Data
-@Entity
 @Table(name = "kindle_book_info")
 public class BookInfo implements Serializable {
 

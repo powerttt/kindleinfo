@@ -4,7 +4,9 @@ export default {
 
     kindle:{
         search:{
-            book:'book/search',
+            book:{
+                value:'book'
+            },
             author:'author/search',
         }
     }
